@@ -188,7 +188,6 @@ export default {
         //退出
         async logout({ commit }) {
             let res = await api.logout()
-
             if (res.code === 200) {
                 router.push('/login')
                 Message.success('欢迎下次光临')
@@ -201,7 +200,7 @@ export default {
         //进度条数据
         async progress({ commit }) {
             let res = await api.progress()
-
+            console.log(res);
             if (res.code === 200) {
                 commit('setGress', res.data)
             } else {

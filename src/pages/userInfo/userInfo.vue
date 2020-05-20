@@ -1,5 +1,6 @@
 <template>
   <div>
+     <el-backtop ></el-backtop>
     <div class="flex c-items j-content1">
       <div class="flex c-items">
         <div class="icon">

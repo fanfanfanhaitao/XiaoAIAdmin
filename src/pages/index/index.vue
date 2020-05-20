@@ -1,22 +1,18 @@
 <template>
 <div>
   <div class="content flex j-content1 m-top2" >
+    <el-backtop ></el-backtop>
     <div class="item" v-for="(item,index) in gress" :key="index">
       <div class="deso" v-bind:class="active==index?'bor-top':''" v-bind:style="{'border-color':colors[index].color}" @click="switchTab(index)"> 
         <div class="con">
           <div class="title">{{item.name}}</div>
           <div class="money">
-            <countTo v-if="active==index" :startVal="startVal" :endVal="item.money" :duration="2000" prefix="￥"></countTo>
+             <countTo v-if="active==index" :startVal="startVal" :endVal="item.money" :duration="2000" prefix="￥"></countTo>
             <div v-else>￥{{item.money}}</div>
           </div>
         </div>
-        <div style="height: 80px;width:80px" v-if="active==index">
-          <CircleProgress :id="item.id" :width="80" :height="80" :radius="8" :barColor="colors[index].color" :backgroundColor="colors[index].bgcolor" :progress="item.value" :isAnimation="true">
-            <span slot></span>
-          </CircleProgress>
-        </div>
-        <div style="height: 80px;width:80px" v-else>
-          <CircleProgress :id="item.id" :width="80" :height="80" :radius="8" barColor="#9FB2BD" backgroundColor="#DCE2E6" :progress="item.value" :isAnimation="true">
+        <div style="height: 80px;width:80px"  :id="`progress${index}`">
+          <CircleProgress :id="item.id" :width="80" :height="80" :radius="8" :barColor="active==index?`${colors[index].color}`:'#9FB2BD'" :backgroundColor="active==index?`${colors[index].bgcolor}`:'#DCE2E6'" :progress="item.value" :isAnimation="true">
             <span slot></span>
           </CircleProgress>
         </div>
@@ -35,6 +31,7 @@
 </template>
 
 <script>
+
 import countTo from "vue-count-to";
 import CircleProgress from "vue-circleprogressbar";
 import profit from "../../components/index/profit"
@@ -59,9 +56,20 @@ export default {
   methods: {
     ...userActions(["progress"]),
     switchTab(e){
-       this.active=e
-       this.progress();
-    }
+      
+        this.changeSwitch(this.active);
+        this.changeSwitch(e);
+        this.active = e;
+   
+   
+    },
+      changeSwitch(index) {
+      let a = `#progress${index}`;
+      document.querySelector(a).style.display = "none";
+      setTimeout(() => {
+        document.querySelector(a).style.display = "block";
+      }, 0);
+    },
   },
   mounted() {
     this.progress();

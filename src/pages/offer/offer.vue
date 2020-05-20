@@ -14,6 +14,7 @@
       </div>
     </div>
     <div class="m-top2">
+      <el-backtop ></el-backtop>
       <el-card>
         <div class="btn">
           <el-button type="primary" size="small" round>待发offer(15)</el-button>
@@ -39,22 +40,6 @@
             align="center"
             show-overflow-tooltip
           ></el-table-column>
-
-          <!-- <el-table-column label="性别" align="center">
-            <template slot-scope="scope">
-              <div v-if="scope.row.gender==0">女</div>
-              <div v-else-if="scope.row.gender==1">男</div>
-            </template>
-          </el-table-column>
-          <template slot-scope="scope">-->
-          <!-- <div v-if="scope.row.status==0">待发</div>
-              <div v-else-if="scope.row.status==1">已发</div>
-              <div v-else-if="scope.row.status==2">已接受</div>
-              <div v-else-if="scope.row.status==3">已拒绝</div>
-              <div v-else-if="scope.row.status==4">已入职</div>
-            </template>
-          </el-table-column>-->
-
           <el-table-column align="right">
             <template slot="header">
               <el-popover placement="bottom" width="180" trigger="click" v-model="visible1">

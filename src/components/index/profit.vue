@@ -4,7 +4,7 @@
        <div class="city">
          <el-card class="el-card box-card">
             <div slot="header" class="clearfix">
-             <span>利润(万)</span>  
+             <span> {{$t(`commons.profit`)}}({{$t(`commons.tenThousand`)}})</span>  
              </div>
              <ve-wordcloud :data="{columns: ['city', 'value'],rows: city}" :settings="chartSettings"></ve-wordcloud>
          </el-card>

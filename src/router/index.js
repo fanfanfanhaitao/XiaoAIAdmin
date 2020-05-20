@@ -19,7 +19,9 @@ const routes = [{
             component: () =>
                 import ('../pages/index/index'),
             meta: {
-                title: '首页'
+                title: '首页',
+                enName: "dashboard",
+                parentName: null,
             },
         }]
 
@@ -66,7 +68,9 @@ const routes = [{
             component: () =>
                 import ('../pages/calendar/calendar'),
             meta: {
-                title: '日程'
+                title: '日程管理',
+                enName: "calendar",
+                parentName: null,
             }
         }]
     }, {
@@ -78,7 +82,9 @@ const routes = [{
             component: () =>
                 import ('../pages/mailList/mailList'),
             meta: {
-                title: '通讯录'
+                title: '通讯录',
+                enName: "mailList",
+                parentName: null,
             }
         }]
     },
@@ -91,7 +97,9 @@ const routes = [{
             component: () =>
                 import ('../pages/offer/offer'),
             meta: {
-                title: 'offer管理'
+                title: 'offer管理',
+                enName: "offer",
+                parentName: 'organize',
             }
         }]
     },
@@ -104,7 +112,9 @@ const routes = [{
             component: () =>
                 import ('../pages/userInfo/userInfo'),
             meta: {
-                title: '人员信息'
+                title: '人员信息',
+                enName: "userInfo",
+                parentName: 'organize',
             }
         }]
     },
@@ -117,7 +127,9 @@ const routes = [{
             component: () =>
                 import ('../pages/pay/pay'),
             meta: {
-                title: '薪酬管理'
+                title: '薪酬管理',
+                enName: "payMent",
+                parentName: 'organize',
             }
         }]
     },
@@ -130,7 +142,9 @@ const routes = [{
             component: () =>
                 import ('../pages/form/form'),
             meta: {
-                title: '分步表单'
+                title: '分步表单',
+                enName: "stepForm",
+                parentName: 'form',
             }
         }]
     },
@@ -143,7 +157,9 @@ const routes = [{
             component: () =>
                 import ('../pages/checkForm/checkForm'),
             meta: {
-                title: '查看账单'
+                title: '查看账单',
+                enName: "checkForm",
+                parentName: 'form',
             }
         }]
     },

@@ -6,7 +6,7 @@ const cn = {
         'editPwd': '修改密码',
         'uploadAvatar': '上传头像',
         'hi': '您好',
-        'home': '首页',
+        'dashboard': '首页',
         'mailList': '通讯录',
         'calendar': '日程管理',
         'infoManage': '信息管理',

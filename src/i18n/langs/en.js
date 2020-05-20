@@ -5,7 +5,7 @@ const en = {
         'personInfo': 'PersonInfo',
         'editPwd': 'Edit Password',
         'uploadAvatar': 'Upload Avatar',
-        'home': 'Dashboard',
+        'dashboard': 'Dashboard',
         'calendar': 'Calendar',
         'payMent': 'PayMent',
         'organize': 'Organize',

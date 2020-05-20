@@ -6,7 +6,7 @@ const zhTW = {
         'editPwd': '修改密碼',
         'uploadAvatar': '上傳頭像',
         'hi': '您好',
-        'home': '首頁',
+        'dashboard': '首頁',
         'mailList': '通訊錄',
         'calendar': '日程管理',
         'infoManage': '信息管理',

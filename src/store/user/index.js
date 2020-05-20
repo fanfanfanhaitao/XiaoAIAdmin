@@ -110,8 +110,7 @@ export default {
         //注册
         async register({ commit }, params) {
             let res = await api.register(params)
-            console.log(res);
-            console.log(res);
+
             if (res.code === 200) {
                 Message.success(res.msg)
                 router.push('/login')
@@ -166,7 +165,7 @@ export default {
         //获取菜单
         async getMenus({ commit }) {
             let res = await api.getMenus()
-
+            console.log(res);
             if (res.code === 200) {
                 commit('setMenus', res.data)
             } else {

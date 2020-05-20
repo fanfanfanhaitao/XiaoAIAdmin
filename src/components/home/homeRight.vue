@@ -204,7 +204,7 @@ export default {
   },
   watch: {
       visible(val){
-        console.log(val);
+      
         if(this.visible){
          this.dialogFormVisible=false
          this.ruleForm.password=this.ruleForm.pass=this.ruleForm.checkPass=''

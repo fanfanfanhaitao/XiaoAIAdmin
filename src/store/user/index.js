@@ -111,6 +111,7 @@ export default {
         async register({ commit }, params) {
             let res = await api.register(params)
             console.log(res);
+            console.log(res);
             if (res.code === 200) {
                 Message.success(res.msg)
                 router.push('/login')

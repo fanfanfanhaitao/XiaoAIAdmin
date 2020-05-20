@@ -1,5 +1,6 @@
 <template>
  <div class="flex c-items j-content3">
+
      <el-card class="card">
          <div slot="header" class="clearfix">
           <span>账单详情</span>
@@ -43,9 +44,10 @@ const {
       print(){
          this.$print(this.$refs.print)
       }
-   },
+      },
+     
    mounted() {
-
+          
    },
    watch: {
 

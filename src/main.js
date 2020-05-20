@@ -13,6 +13,9 @@ import VCharts from 'v-charts'
 import Print from '@/plugs/print'
 
 
+
+
+
 router.beforeEach((to, from, next) => {
     if (to.meta.title) {
         document.title = to.meta.title

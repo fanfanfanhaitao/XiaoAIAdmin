@@ -29,10 +29,7 @@ export default {
     getMenus() {
         return service.get('/users/menus')
     },
-    //上传头像
-    upload(params) {
-        return service.get('/upload', params)
-    },
+
     //修改密码
     updatePwd(params) {
         return service.post('/users/updatePwd', params)

@@ -20,7 +20,8 @@ export default {
         user: [],
         showUser: [],
         pay: [],
-        form: []
+        form: [],
+
 
     },
     mutations: {
@@ -78,7 +79,7 @@ export default {
             }
         },
         changeshowUser(state, data) {
-            console.log(data);
+
             data.map(item => {
                 state.showUser.map(item1 => {
                     if (item == item1) {
@@ -96,6 +97,7 @@ export default {
         setForm(state, data) {
             state.form = data
         },
+
 
     },
     actions: {
@@ -120,7 +122,7 @@ export default {
         //短信验证码
         async sendMsg({ commit }, params) {
             let res = await api.sendMsg(params)
-            console.log(res);
+
             if (res.code === 200) {
                 Message.success(res.msg)
             } else {
@@ -130,7 +132,7 @@ export default {
         //登陆
         async login({ commit, dispatch }, params) {
             let res = await api.login(params)
-            console.log(res);
+
             if (res.code === 200) {
                 Message.success(res.msg)
                 localStorage.setItem('user', JSON.stringify(res.data))
@@ -144,7 +146,7 @@ export default {
         //手机号登录
         async phoneLogin({ commit }, params) {
             let res = await api.phoneLogin(params)
-            console.log(res);
+
             if (res.code === 200) {
                 Message.success(res.msg)
                 router.push('/')
@@ -155,7 +157,7 @@ export default {
         //找回密码
         async findPwd({ commit }, params) {
             let res = await api.findPwd(params)
-            console.log(res);
+
             if (res.code === 200) {
                 Message.success(res.msg)
             } else {
@@ -165,7 +167,7 @@ export default {
         //获取菜单
         async getMenus({ commit }) {
             let res = await api.getMenus()
-            console.log(res);
+
             if (res.code === 200) {
                 commit('setMenus', res.data)
             } else {
@@ -175,7 +177,7 @@ export default {
         //修改密码
         async updatePwd({ commit }, params) {
             let res = await api.updatePwd(params)
-            console.log(res);
+
             if (res.code === 200) {
                 commit('setVisible', true)
                 Message.success(res.msg)
@@ -186,22 +188,11 @@ export default {
         //退出
         async logout({ commit }) {
             let res = await api.logout()
-            console.log(res);
+
             if (res.code === 200) {
                 router.push('/login')
                 Message.success('欢迎下次光临')
                 localStorage.clear()
-            } else {
-                Message.info(res.msg)
-            }
-        },
-        //上传头像
-        async upload({ commit }, params) {
-            let res = await api.upload(params)
-            console.log(res);
-            if (res.code === 200) {
-                Message.success(res.msg)
-                    // commit('setMenus', res.data)
             } else {
                 Message.info(res.msg)
             }
@@ -241,7 +232,7 @@ export default {
 
         async addDynamic({ commit, dispatch }, params) {
             let res = await api.addDynamic(params)
-            console.log(res);
+
             if (res.code === 200) {
                 Message.success(res.msg)
                 dispatch('getDynamic')
@@ -285,7 +276,7 @@ export default {
         //获取通讯录
         async getMailList({ commit }, params) {
             let res = await api.getMailList()
-            console.log(params);
+
             if (res.code === 200) {
                 if (params) {
                     res.data = res.data.filter(item => {
@@ -300,7 +291,7 @@ export default {
         //获取offer
         async getOffer({ commit }) {
             let res = await api.getOffer()
-            console.log(res);
+
             res.data.map(item => {
                 if (item.gender == 1) {
                     item.gender = '男'
@@ -318,7 +309,7 @@ export default {
         //获取员工信息
         async getUser({ commit, dispatch }, params) {
             let res = await api.getUser()
-            console.log(res);
+
             if (res.code === 200) {
                 commit('setUser', res.data)
             } else {
@@ -328,7 +319,7 @@ export default {
         //薪酬信息
         async getPay({ commit }) {
             let res = await api.getPay()
-            console.log(res);
+
             if (res.code === 200) {
                 commit('setPay', res.data)
             } else {

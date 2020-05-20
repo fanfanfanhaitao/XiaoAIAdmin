@@ -31,10 +31,14 @@
         <el-header>
           <div class="header flex c-items">
             <div class="top">
+            
               <div @click="collapse" class="icon flex">
+                  <span class="item" data-step="1" data-intro="收缩菜单">
                 <i :class="isCollapse?'el-icon-s-unfold':'el-icon-s-fold'"></i>
+                </span>
                 <div class="title">{{$t(`commons.xiaoai`)}}{{$t(`commons.admin`)}}</div>
               </div>
+              
               <homeRight></homeRight>
             </div>
           </div>

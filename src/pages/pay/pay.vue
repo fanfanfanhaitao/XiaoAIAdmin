@@ -67,7 +67,7 @@
             >{{scope.row.planMoney}}</div>
             <div v-else>
               <el-input
-                v-model="scope.row.actualMoney"
+                v-model="scope.row.planMoney"
                 @blur="blurInput(scope.$index)"
                 @keyup.enter.native="blurInput(scope.$index)"
               ></el-input>

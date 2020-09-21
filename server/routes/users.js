@@ -270,7 +270,7 @@ router.post('/sendMsg', async ctx => {
     let res = await smsClient.sendSMS({
         PhoneNumbers: phone,
         SignName: '海木木涛然',
-        TemplateCode: 'SMS_179290408',
+        TemplateCode: '',
         TemplateParam: '{code:' + code + '}'
     })
     if (res.Message === 'OK') {
